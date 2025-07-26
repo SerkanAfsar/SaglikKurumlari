@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #283b6a;
+  --secondary: #21cdc0;
+  --font-gray: #8992a3;
 }
 
 @theme inline {
@@ -10,6 +13,51 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-roboto: var(--font-roboto);
+  --font-quicksand: var(--font-quicksand);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-font-gray: var(--font-gray);
+
+  --animate-headerSlideDown: headerSlideDown 0.5s ease-in-out;
+  --animate-slideToTop: slideToTop 0.2s ease-in-out;
+  --animate-animateFromLeft: animateFromLeft 0.2s ease-in-out;
+
+  @keyframes headerSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideToTop {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20%);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @keyframes animateFromLeft {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      width: 0px;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      width: 10px;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +68,206 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply m-0 flex min-h-screen flex-col p-0;
+}
+
+@layer base {
+  h3 {
+    @apply font-quicksand text-[40px];
+  }
+  h2 {
+    @apply font-roboto text-sm;
+  }
+  section {
+    @apply block w-full py-10;
+  }
+  p {
+    @apply text-font-gray m-0 p-0 text-lg leading-8;
+  }
+  main {
+    @apply flex-auto;
+  }
+}
+@layer components {
+  .button {
+    @apply bg-secondary font-roboto flex h-16 items-center justify-center gap-2 px-5 text-white capitalize;
+  }
+
+  .bannerBottomItem {
+    @apply flex items-start justify-start gap-5 rounded-md p-10 first-of-type:rounded-tr-none first-of-type:rounded-br-none last-of-type:rounded-tl-none last-of-type:rounded-bl-none;
+  }
+  .bannerBottomItem .info {
+    @apply flex flex-col gap-3;
+  }
+
+  .titleComponent {
+    @apply block w-full text-center;
+    h3 {
+      @apply font-roboto text-secondary mb-3 block w-full text-center text-sm font-bold;
+    }
+    h4 {
+      @apply font-quicksand text-primary mx-auto block max-w-xl text-center text-4xl leading-12 font-bold;
+    }
+  }
+}
+@layer utilities {
+  .container {
+    @apply mx-auto;
+    padding-inline: 8rem;
+    @variant max-2xl {
+      padding-inline: 1rem;
+    }
+    @variant max-xl {
+      padding-inline: 2rem;
+    }
+  }
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+  .flexCenterBetween {
+    @apply flex items-center justify-between;
+  }
+}
+
+.headerSocial {
+  @apply gap-3;
+  a {
+    @apply bg-secondary block rounded-full p-1.5;
+    svg {
+      @apply size-4 text-black;
+    }
+  }
+}
+.headerTopNav {
+  li {
+    @apply flex items-center justify-center gap-1;
+    svg {
+      @apply size-4;
+    }
+  }
+}
+
+.mainNav {
+  @apply font-roboto;
+  a {
+    @apply text-primary before:bg-secondary relative block py-9 font-semibold before:absolute before:top-0 before:left-0 before:h-1 before:w-0 before:transition-all before:duration-500 before:content-[''] hover:before:w-full;
+  }
+}
+
+.departments {
+  @apply animate-slideToTop absolute top-[100%] block min-w-[235px] self-stretch rounded-md rounded-tl-none rounded-tr-none bg-white py-6 shadow;
+  li {
+    @apply px-10;
+    a {
+      @apply before:bg-primary hover:before:animate-animateFromLeft relative block py-2 text-sm font-normal before:absolute before:top-[50%] before:-left-4 before:h-[2px] before:-translate-y-1/2 before:transition-all before:content-[''] hover:before:w-[10px];
+    }
+  }
+}
+.sliderIcons {
+  @apply gap-3;
+  div {
+    @apply font-quicksand flex flex-col items-center justify-center gap-3;
+    div {
+      @apply flex items-center justify-center rounded-full bg-white p-5;
+      svg {
+        @apply text-primary size-10;
+      }
+    }
+    span {
+      @apply text-primary font-bold;
+    }
+  }
+}
+
+.servicesSection {
+  @apply grid grid-cols-1 text-white lg:grid-cols-3;
+  > div {
+    @apply nth-of-type-[1]:bg-secondary nth-of-type-[2]:bg-primary flex h-full w-full gap-6 rounded-md p-6 text-white nth-of-type-[1]:rounded-tr-none nth-of-type-[1]:rounded-br-none nth-of-type-[2]:rounded-none nth-of-type-[3]:rounded-tl-none nth-of-type-[3]:rounded-bl-none nth-of-type-[3]:bg-[#2D4990];
+  }
+  p {
+    @apply text-sm leading-7 text-white;
+  }
+  svg {
+    @apply size-12;
+  }
+}
+.infoSection {
+  @apply relative z-10 -mb-20 block w-full;
+
+  h2 {
+    @apply font-quicksand text-primary mb-6 block max-w-xl text-left text-4xl leading-12 font-bold;
+  }
+  .leftSide {
+    @apply flex flex-5/12 flex-col gap-6;
+    p {
+      @apply font-roboto text-primary text-[15px] leading-7 font-bold;
+    }
+    .imgContent {
+      @apply relative -z-10 mt-auto -mb-[50px] block w-[135%] overflow-hidden rounded-md shadow before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#061733] before:to-transparent before:content-[''];
+    }
+  }
+  .rightSide {
+    @apply font-roboto relative flex-7/12 rounded-2xl bg-white p-12 pt-0 pb-6;
+    p {
+      @apply text-font-gray mb-5 text-base last:mb-0;
+    }
+  }
+}
+footer {
+  @apply bg-primary mt-auto w-full pt-5;
+  section {
+    @apply p-0;
+    h6 {
+      @apply font-quicksand mb-3 text-xl font-bold text-white;
+    }
+    p,
+    ul {
+      @apply font-roboto text-base leading-6 text-white;
+    }
+    ul {
+      @apply flex flex-col flex-wrap gap-2 text-base md:flex-row;
+      li {
+        a {
+          @apply hover:text-secondary transition-all duration-200 ease-in-out hover:underline;
+        }
+      }
+    }
+  }
+}
+
+.detailsSection {
+  @apply block min-h-[400px] w-full bg-[url(/images/middlebg.jpg)] bg-cover bg-center pt-40;
+}
+.detailItem {
+  @apply after:bg-primary relative flex h-full max-w-sm flex-col gap-6 overflow-hidden rounded-md bg-white p-8 shadow after:absolute after:bottom-0 after:h-[2px] after:w-[80%] after:content-[''];
+
+  h5 {
+    @apply font-quicksand text-primary text-2xl font-extrabold;
+  }
+  p {
+    @apply font-roboto text-sm leading-7 text-balance;
+  }
+  & > div.img {
+    @apply absolute top-[30%] right-0 translate-x-1/3 -translate-y-1/2 opacity-30 [&>svg]:block [&>svg]:size-28 [&>svg]:text-black;
+  }
+}
+.my-swiper .swiper-pagination-bullet {
+  @apply mx-1 h-3 w-3 rounded-full bg-gray-300 opacity-100 transition-all;
+}
+
+.my-swiper .swiper-pagination-bullet-active {
+  @apply bg-primary w-5;
+}
+.my-swiper {
+  @apply block h-full w-full !pb-10;
+}
+.my-swiper .swiper-pagination {
+  @apply -mb-2;
+}
+
+.clip-triangle {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+.perItem {
+  @apply [&>svg]:text-primary flex items-start justify-start gap-3 text-base [&>svg]:size-5 [&>svg]:shrink-0 [&>svg]:grow-0;
 }

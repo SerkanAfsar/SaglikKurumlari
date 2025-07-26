@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Quicksand } from "next/font/google";
 import "./globals.css";
+import Header from "@/Components/Header";
+import Footer from "@/Components/Footer";
+import NextTopLoader from "nextjs-toploader";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const robotoFont = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin-ext"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const quickSandFont = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -23,11 +36,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoFont.variable} ${quickSandFont.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main>
+          {children}
+          <NextTopLoader
+            color="#21cdc0"
+            height={4}
+            showSpinner={true}
+            zIndex={1600}
+          />
+        </main>
+        <Footer />
       </body>
     </html>
   );
