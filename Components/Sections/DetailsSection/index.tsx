@@ -5,8 +5,8 @@ export default function DetailsSection() {
     <section className="detailsSection">
       <div className="container mb-12 flex flex-col gap-6">
         <div className="titleComponent">
-          <h3>The Best Medical And General Practice Care!</h3>
-          <h4>Providing Medical Care For The Sickest In Our Community.</h4>
+          <h3>Türkiye il İlçe Hastane Arama Servisi</h3>
+          <h4>Hizmet sunduğumuz kategorilerin listesi</h4>
         </div>
       </div>
       <div className="container">

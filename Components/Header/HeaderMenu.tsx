@@ -4,15 +4,17 @@ import logo from "../../public/images/logo.webp";
 import Image from "next/image";
 import HeaderMenuDepartments from "./HeaderMenuDepartments";
 import CustomLinkButton from "../UI/CustomLinkButton";
-import { CalendarDays, Menu } from "lucide-react";
+import { Hospital, Menu } from "lucide-react";
 import HeaderMenuNav from "./HeaderMenuNav";
 import CustomElement from "../Common/CustomElement";
+import { useHeaderContext } from "./Contexts/HeaderContext";
 
 export default function HeaderMenu({
   isScrolled = false,
 }: {
   isScrolled: boolean;
 }) {
+  const { setIsMobileOpened } = useHeaderContext();
   return (
     <CustomElement
       as="section"
@@ -28,21 +30,27 @@ export default function HeaderMenu({
           className="font-quicksand text-primary flex items-center justify-center gap-3 text-2xl font-bold"
         >
           <Image src={logo} alt="Logo" width={55} height={50} />
-          <span>Sağlık Kurumları</span>
+          <span className="hidden md:block">Sağlık Kurumları</span>
         </Link>
         <CustomElement className="ml-auto hidden items-center justify-between gap-6 xl:flex">
           <HeaderMenuNav />
           <HeaderMenuDepartments />
           <CustomLinkButton
-            href={"/"}
+            href={"/tum-iller"}
             title="Tüm İller"
-            className="gap-3 rounded-3xl px-6 py-4 text-sm font-bold text-white uppercase"
+            className="hover:bg-secondary gap-3 rounded-3xl px-6 py-4 text-sm font-bold text-white uppercase transition-all"
             linkType="secondary"
           >
-            <CalendarDays size={20} /> <span>Tüm İller</span>
+            <Hospital size={20} />
+            <span>Tüm İller</span>
           </CustomLinkButton>
         </CustomElement>
-        <Menu className="block xl:hidden" />
+        <Menu
+          className="block cursor-pointer xl:hidden"
+          color="#283B6A"
+          size={30}
+          onClick={() => setIsMobileOpened(true)}
+        />
       </CustomElement>
     </CustomElement>
   );

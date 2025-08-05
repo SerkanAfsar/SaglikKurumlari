@@ -4,16 +4,7 @@ import "./globals.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import NextTopLoader from "nextjs-toploader";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import UpScroll from "@/Components/Common/UpScroll";
 
 const robotoFont = Roboto({
   variable: "--font-roboto",
@@ -49,6 +40,7 @@ export default function RootLayout({
             showSpinner={true}
             zIndex={1600}
           />
+          <UpScroll />
         </main>
         <Footer />
       </body>

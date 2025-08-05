@@ -21,8 +21,6 @@ export default function SliderSection() {
         slidesPerView={1}
         autoplay={{ delay: 4000 }}
         loop={true}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {SliderData.map((item, index) => (
           <SwiperSlide className="relative block h-full w-full" key={index}>
@@ -32,7 +30,7 @@ export default function SliderSection() {
       </Swiper>
 
       <div className="absolute top-[50%] z-10 flex w-full -translate-y-1/2">
-        <div className="!md:px-4 container flex items-center justify-between !p-0">
+        <div className="flex w-full items-center justify-between !p-0">
           <button className="prev-btn deneme cursor-pointer">
             <ChevronLeft
               className="text-blue-700"

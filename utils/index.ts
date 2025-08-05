@@ -62,13 +62,16 @@ export async function GetCityDetailData(
   } else {
     typeDetail = [...new Set(cityDetail.map((item) => item.dc_KURUM_TURU))];
   }
-
-  return {
-    districtList: [...new Set(cityDetail.map((item) => item.dc_ILCE))],
-    typeDetail,
-    listData,
-    cityName: cityDetail[0].dc_SEHIR,
-  };
+  if (cityDetail[0]) {
+    return {
+      districtList: [...new Set(cityDetail.map((item) => item.dc_ILCE))],
+      typeDetail,
+      listData,
+      cityName: cityDetail[0].dc_SEHIR,
+    };
+  } else {
+    return undefined;
+  }
 }
 
 export const slugUrl = (value: string = "Deneme") => {

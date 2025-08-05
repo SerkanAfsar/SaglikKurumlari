@@ -5,15 +5,17 @@ export default function InfoSection() {
     <section className="infoSection">
       <div className="container">
         <div className="w-full flex-auto">
-          <h2>Improving The Quality Of Your Life Through Better Health.</h2>
+          <h2>
+            Telefon EPosta ve Adres Bilgileri Servisi artık elinizin altında
+          </h2>
         </div>
-        <div className="flex w-full items-stretch">
+        <div className="flex w-full flex-wrap items-stretch">
           <div className="leftSide">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              ex aut, deleniti reprehenderit iste quidem maiores, expedita
-              libero quam iure a vitae dolorum quo! Molestiae corrupti esse
-              harum doloremque optio!
+              Listeden ilgili şehri ve ilçeyi seçerek bütün hastane,özel
+              hastane,devlet hastaneleri,üniversite hastaneleri,aile sağlık
+              kurumları gibi kategorilere ait sağlık kurumlarının telefon eposta
+              ve adreslerini bulabilirsiniz...
             </p>
             <div className="imgContent">
               <Image
@@ -27,26 +29,31 @@ export default function InfoSection() {
           </div>
           <div className="rightSide">
             <p>
-              Our goal is to deliver quality of care in a courteous, respectful,
-              and compassionate manner. We hope you will allow us to care for
-              you and to be the first and best choice for healthcare.
+              Devlet Hastaneleri, kamu hizmeti kapsamında vatandaşlara ücretsiz
+              ya da düşük ücretli sağlık hizmeti sunan kurumlardır. Türkiyenin
+              dört bir yanında hizmet veren bu hastanelere ait iletişim
+              bilgilerine sitemiz üzerinden kolayca erişebilir, size en yakın
+              devlet hastanesini anında bulabilirsiniz.
             </p>
             <p>
-              We will work with you to develop individualised care plans,
-              including management of chronic diseases. We are committed to
-              being the region’s premier healthcare network providing patient
-              centered care that inspires clinical and service excellence.
+              Özel Hastaneler, konfor ve hız odaklı sağlık hizmeti almak isteyen
+              bireyler için ideal çözümler sunar. Sitemizde yer alan özel
+              hastane bilgileri sayesinde fiyat bilgisi alabilir, randevu için
+              doğrudan iletişime geçebilir ve detaylı hizmet içeriklerine göz
+              atabilirsiniz.
             </p>
             <p>
-              Our goal is to deliver quality of care in a courteous, respectful,
-              and compassionate manner. We hope you will allow us to care for
-              you and to be the first and best choice for healthcare.
+              Toplum Sağlığı Merkezleri, koruyucu sağlık hizmetlerinin
+              yürütüldüğü, halk sağlığı odaklı kurumlardır. Aşı, eğitim ve
+              bulaşıcı hastalık takibi gibi hizmetlerde önemli rol oynayan bu
+              merkezlere ulaşmak artık çok daha kolay.
             </p>
             <p>
-              We will work with you to develop individualised care plans,
-              including management of chronic diseases. We are committed to
-              being the region’s premier healthcare network providing patient
-              centered care that inspires clinical and service excellence.
+              Aile Sağlığı Merkezleri ise bireylerin günlük sağlık ihtiyaçlarını
+              karşılayan, aile hekimliği sistemi kapsamında hizmet veren
+              kuruluşlardır. Muayene, rapor ve reçete gibi işlemleriniz için
+              bölgenizdeki aile sağlığı merkezlerine ait tüm bilgilere tek tıkla
+              ulaşabilirsiniz.
             </p>
           </div>
         </div>

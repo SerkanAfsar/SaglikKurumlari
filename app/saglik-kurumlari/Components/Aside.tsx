@@ -27,7 +27,7 @@ export default function Aside({
           <input
             type="text"
             value={value}
-            className="bg-secondary block w-full rounded-md p-3.5 text-sm text-black"
+            className="bg-secondary block w-full rounded-md p-3.5 text-sm text-black placeholder:font-bold placeholder:text-white"
             onChange={(e) => setValue(e.target.value)}
             placeholder="İlçe Arayınız..."
           />
@@ -46,6 +46,7 @@ export default function Aside({
                   },
                 )}
                 href={path}
+                title={`${item} Sağlık Kurumları`}
               >
                 <span>{item} Sağlık Kurumları</span>
               </Link>

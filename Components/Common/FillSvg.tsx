@@ -8,7 +8,7 @@ export default function FillSvg({ className }: { className?: string }) {
       viewBox="0 0 1200 120"
       preserveAspectRatio="none"
       className={cn(
-        "absolute top-0 right-0 left-0 z-10 w-full -translate-y-[99%]",
+        "absolute top-1 right-0 left-0 z-10 w-full -translate-y-[100%]",
         className,
       )}
     >

@@ -19,8 +19,6 @@ export function DetailItemWrapper() {
       className="my-swiper"
       spaceBetween={30}
       autoplay={{ delay: 4000 }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
       breakpoints={{
         992: {
           slidesPerView: 3,

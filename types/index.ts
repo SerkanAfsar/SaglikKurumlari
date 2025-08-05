@@ -8,3 +8,7 @@ export type DataType = {
   dc_TELEFON: string;
   dc_E_POSTA: string;
 };
+
+export type EnvType = {
+  NEXT_PUBLIC_SITE_NAME: string;
+};

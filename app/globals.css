@@ -22,6 +22,7 @@
   --animate-headerSlideDown: headerSlideDown 0.5s ease-in-out;
   --animate-slideToTop: slideToTop 0.2s ease-in-out;
   --animate-animateFromLeft: animateFromLeft 0.2s ease-in-out;
+  --animate-animateFadeIn: animateFadeIn 0.2s ease-in-out;
 
   @keyframes headerSlideDown {
     from {
@@ -56,6 +57,17 @@
       transform: translateY(0);
       opacity: 1;
       width: 10px;
+    }
+  }
+
+  @keyframes animateFadeIn {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
@@ -106,7 +118,7 @@ body {
       @apply font-roboto text-secondary mb-3 block w-full text-center text-sm font-bold;
     }
     h4 {
-      @apply font-quicksand text-primary mx-auto block max-w-xl text-center text-4xl leading-12 font-bold;
+      @apply font-quicksand text-primary mx-auto block max-w-3xl text-center text-4xl leading-12 font-bold capitalize;
     }
   }
 }
@@ -164,7 +176,7 @@ body {
   }
 }
 .sliderIcons {
-  @apply gap-3;
+  @apply hidden items-start justify-between gap-6 md:flex;
   div {
     @apply font-quicksand flex flex-col items-center justify-center gap-3;
     div {
@@ -182,7 +194,7 @@ body {
 .servicesSection {
   @apply grid grid-cols-1 text-white lg:grid-cols-3;
   > div {
-    @apply nth-of-type-[1]:bg-secondary nth-of-type-[2]:bg-primary flex h-full w-full gap-6 rounded-md p-6 text-white nth-of-type-[1]:rounded-tr-none nth-of-type-[1]:rounded-br-none nth-of-type-[2]:rounded-none nth-of-type-[3]:rounded-tl-none nth-of-type-[3]:rounded-bl-none nth-of-type-[3]:bg-[#2D4990];
+    @apply nth-of-type-[1]:bg-secondary nth-of-type-[2]:bg-primary flex h-full w-full gap-6 rounded-none p-6 text-white nth-of-type-[1]:rounded-tr-none nth-of-type-[1]:rounded-br-none nth-of-type-[2]:rounded-none nth-of-type-[3]:rounded-tl-none nth-of-type-[3]:rounded-bl-none nth-of-type-[3]:bg-[#2D4990] lg:rounded-md;
   }
   p {
     @apply text-sm leading-7 text-white;
@@ -192,22 +204,22 @@ body {
   }
 }
 .infoSection {
-  @apply relative z-10 -mb-20 block w-full;
+  @apply relative z-10 mb-0 block w-full xl:-mb-20;
 
   h2 {
-    @apply font-quicksand text-primary mb-6 block max-w-xl text-left text-4xl leading-12 font-bold;
+    @apply font-quicksand text-primary mb-6 block max-w-xl text-left text-xl font-bold uppercase md:text-4xl md:leading-12 md:capitalize;
   }
   .leftSide {
-    @apply flex flex-5/12 flex-col gap-6;
+    @apply flex flex-auto flex-col gap-6 xl:flex-5/12;
     p {
       @apply font-roboto text-primary text-[15px] leading-7 font-bold;
     }
     .imgContent {
-      @apply relative -z-10 mt-auto -mb-[50px] block w-[135%] overflow-hidden rounded-md shadow before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#061733] before:to-transparent before:content-[''];
+      @apply relative -z-10 mt-auto -mb-[50px] hidden w-[135%] overflow-hidden rounded-md shadow before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#061733] before:to-transparent before:content-[''] xl:block;
     }
   }
   .rightSide {
-    @apply font-roboto relative flex-7/12 rounded-2xl bg-white p-12 pt-0 pb-6;
+    @apply font-roboto relative mt-6 flex-auto rounded-2xl bg-white pt-0 pb-6 xl:mt-0 xl:flex-7/12 xl:p-12 xl:pt-0;
     p {
       @apply text-font-gray mb-5 text-base last:mb-0;
     }
@@ -236,13 +248,13 @@ footer {
 }
 
 .detailsSection {
-  @apply block min-h-[400px] w-full bg-[url(/images/middlebg.jpg)] bg-cover bg-center pt-40;
+  @apply block min-h-[400px] w-full bg-[url(/images/middlebg.jpg)] bg-cover bg-center pt-20 xl:pt-40;
 }
 .detailItem {
-  @apply after:bg-primary relative flex h-full max-w-sm flex-col gap-6 overflow-hidden rounded-md bg-white p-8 shadow after:absolute after:bottom-0 after:h-[2px] after:w-[80%] after:content-[''];
+  @apply after:bg-primary relative flex h-full min-h-[350px] max-w-sm flex-col gap-6 overflow-hidden rounded-md bg-white p-8 shadow after:absolute after:bottom-0 after:h-[2px] after:w-[80%] after:content-[''];
 
   h5 {
-    @apply font-quicksand text-primary text-2xl font-extrabold;
+    @apply font-quicksand text-primary text-xl font-extrabold;
   }
   p {
     @apply font-roboto text-sm leading-7 text-balance;
@@ -270,4 +282,11 @@ footer {
 }
 .perItem {
   @apply [&>svg]:text-primary flex items-start justify-start gap-3 text-base [&>svg]:size-5 [&>svg]:shrink-0 [&>svg]:grow-0;
+}
+
+.breadCrumb {
+  @apply relative z-10 flex h-[200px] w-full items-center justify-center bg-[url(/images/bg-breadcrumb.jpg)] bg-cover bg-center py-20 before:absolute before:inset-0 before:-z-10 before:h-full before:w-full before:bg-black/30 before:content-[''] lg:h-[250px];
+  h1 {
+    @apply font-quicksand block text-center text-2xl font-bold text-white lg:text-4xl;
+  }
 }

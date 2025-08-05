@@ -16,10 +16,10 @@ export default function CustomSliderItem({
       />
       <div className="flexCenter inset-0 container h-full w-full flex-col !items-start gap-6 text-left">
         <h2
-          className="text-primary font-quicksand max-w-3xl text-4xl font-bold md:text-7xl md:leading-20"
+          className="text-primary font-quicksand max-w-3xl text-center text-4xl font-bold md:text-left md:text-7xl md:leading-20"
           dangerouslySetInnerHTML={{ __html: item.title }}
         ></h2>
-        <p className="text-primary font-roboto hidden max-w-xl leading-7 font-bold md:block">
+        <p className="text-primary font-roboto max-w-xl text-center leading-7 font-bold md:block md:text-left">
           {item.description}
         </p>
         <div className="sliderIcons flexCenter">
@@ -27,25 +27,25 @@ export default function CustomSliderItem({
             <div>
               <Ambulance strokeWidth={1} />
             </div>
-            <span>Deneme 123</span>
+            <span>Hastaneler</span>
           </div>
           <div>
             <div>
               <HeartPlus strokeWidth={1} />
             </div>
-            <span>Deneme 123</span>
+            <span>Özel Hastaneler</span>
           </div>
           <div>
             <div>
               <HeartPulse strokeWidth={1} />
             </div>
-            <span>Deneme 123</span>
+            <span>Aile Sağlık Merkezleri</span>
           </div>
           <div>
             <div>
               <Cross strokeWidth={1} />
             </div>
-            <span>Deneme 123</span>
+            <span>Üniversite Hastaneleri</span>
           </div>
         </div>
       </div>

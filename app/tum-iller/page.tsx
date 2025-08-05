@@ -1,8 +1,5 @@
+import BreadCrumb from "@/Components/Common/BreadCrumb";
 import CityListSection from "@/Components/Sections/CityListSection";
-import DetailsSection from "@/Components/Sections/DetailsSection";
-import InfoSection from "@/Components/Sections/InfoSection";
-import ServicesSection from "@/Components/Sections/ServicesSection";
-import SliderSection from "@/Components/Sections/SliderSection";
 import { envVariables } from "@/utils/Data";
 import { Metadata } from "next";
 
@@ -40,14 +37,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
+export default function Page() {
   return (
     <>
-      <SliderSection />
-      <ServicesSection />
-      <CityListSection className="mt-62" />
-      <InfoSection />
-      <DetailsSection />
+      <BreadCrumb title="Sağlık Kurumları Listesi" />
+      <CityListSection isTop={false} className="pt-16" />
     </>
   );
 }
