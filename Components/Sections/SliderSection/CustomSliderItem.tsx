@@ -14,7 +14,7 @@ export default function CustomSliderItem({
         alt={item.title}
         className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
       />
-      <div className="flexCenter inset-0 container h-full w-full flex-col !items-start gap-6 text-left">
+      <div className="flexCenter inset-0 container h-full w-full flex-col items-center gap-6 text-left md:!items-start">
         <h2
           className="text-primary font-quicksand max-w-3xl text-center text-4xl font-bold md:text-left md:text-7xl md:leading-20"
           dangerouslySetInnerHTML={{ __html: item.title }}
