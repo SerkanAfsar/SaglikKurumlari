@@ -43,9 +43,11 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <>
+      <h1 className="hidden">Türkiye İl İlçe Sağlık Kurumları Merkezleri</h1>
       <SliderSection />
+
       <ServicesSection />
-      <CityListSection className="mt-62" />
+      <CityListSection className="md:mt-28 lg:mt-40 xl:mt-60" />
       <InfoSection />
       <DetailsSection />
     </>

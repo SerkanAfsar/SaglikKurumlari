@@ -33,22 +33,13 @@ export default function HeaderMenuDepartments() {
         <div className="departments">
           <ul>
             <li>
-              <Link href={"/"}>Neurology Clinic</Link>
+              <Link href={"/"}>İstanbul Sağlık Kurumları</Link>
             </li>
             <li>
-              <Link href={"/"}>Cardiology Clinic</Link>
+              <Link href={"/"}>İzmir Sağlık Kurumları</Link>
             </li>
             <li>
-              <Link href={"/"}>Pathology Clinic</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Laboratory Clinic</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Pediatric Clinic</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Cardiac Clinic</Link>
+              <Link href={"/"}>Ankara Sağlık Kurumları</Link>
             </li>
           </ul>
         </div>

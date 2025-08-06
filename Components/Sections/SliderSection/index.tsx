@@ -8,15 +8,15 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 import { SliderData } from "@/utils/Data";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 import CustomSliderItem from "./CustomSliderItem";
 export default function SliderSection() {
   return (
     <section className="relative block h-[calc(100vh-156px)] w-full p-0">
       <Swiper
-        modules={[Autoplay, EffectFade, Navigation]}
+        modules={[Autoplay, EffectFade]}
         effect="fade"
-        navigation={{ nextEl: ".deneme", prevEl: ".deneme2" }}
+        // navigation={{ nextEl: ".deneme", prevEl: ".deneme2" }}
         className="block h-full w-full"
         slidesPerView={1}
         autoplay={{ delay: 4000 }}
@@ -29,7 +29,7 @@ export default function SliderSection() {
         ))}
       </Swiper>
 
-      <div className="absolute top-[50%] z-10 flex w-full -translate-y-1/2">
+      {/* <div className="absolute top-[50%] z-10 flex w-full -translate-y-1/2">
         <div className="flex w-full items-center justify-between !p-0">
           <button
             type="button"
@@ -54,7 +54,7 @@ export default function SliderSection() {
             />
           </button>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

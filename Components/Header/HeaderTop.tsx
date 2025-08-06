@@ -20,13 +20,13 @@ export default function HeaderTop() {
           </li>
         </ul>
         <div className="headerSocial flexCenter">
-          <Link href={"/"}>
+          <Link href={"/"} title="Facebook">
             <Facebook />
           </Link>
-          <Link href={"/"}>
+          <Link href={"/"} title="İnstagram">
             <Instagram />
           </Link>
-          <Link href={"/"}>
+          <Link href={"/"} title="Twitter">
             <Twitter />
           </Link>
         </div>
