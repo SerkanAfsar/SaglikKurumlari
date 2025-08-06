@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.saglikkurumlari.net
+
+# Sitemaps
+Sitemap: https://www.saglikkurumlari.net/sitemap.xml
