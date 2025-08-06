@@ -31,14 +31,22 @@ export default function SliderSection() {
 
       <div className="absolute top-[50%] z-10 flex w-full -translate-y-1/2">
         <div className="flex w-full items-center justify-between !p-0">
-          <button className="prev-btn deneme cursor-pointer">
+          <button
+            type="button"
+            className="prev-btn deneme cursor-pointer"
+            aria-label="Önceki"
+          >
             <ChevronLeft
               className="text-blue-700"
               size={60}
               strokeWidth={1.2}
             />
           </button>
-          <button className="next-btn deneme2 cursor-pointer">
+          <button
+            type="button"
+            aria-label="Sonraki"
+            className="next-btn deneme2 cursor-pointer"
+          >
             <ChevronRight
               className="font-thin text-blue-600"
               size={60}
