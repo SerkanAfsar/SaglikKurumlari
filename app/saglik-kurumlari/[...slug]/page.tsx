@@ -3,6 +3,7 @@ import ContentWrapper from "../Components/ContentWrapper";
 import { GetList } from "@/Services";
 import { Metadata } from "next";
 import { envVariables } from "@/utils/Data";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -79,6 +80,12 @@ export default async function Page({
 }) {
   const { slug } = await params;
   const result = await GetCityDetailData(slug[0], slug[1], slug[2]);
+  if (!result) {
+    return notFound();
+  }
+  if (!result.listData.length) {
+    return notFound();
+  }
 
   return <ContentWrapper result={{ ...result!, distictSlug: slug[1] }} />;
 }

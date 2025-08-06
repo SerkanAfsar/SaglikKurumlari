@@ -97,7 +97,7 @@ body {
     @apply text-font-gray m-0 p-0 text-lg leading-8;
   }
   main {
-    @apply flex-auto;
+    @apply flex flex-1 flex-col;
   }
 }
 @layer components {
