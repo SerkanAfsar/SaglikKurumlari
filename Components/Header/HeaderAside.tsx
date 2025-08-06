@@ -71,7 +71,7 @@ export default function HeaderAside() {
           </li>
           {!value && (
             <li>
-              <Link href={"/"} className="block px-3 py-1">
+              <Link href={"/"} title="Anasayfa" className="block px-3 py-1">
                 Anasayfa
               </Link>
             </li>

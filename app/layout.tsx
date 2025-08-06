@@ -5,6 +5,7 @@ import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import UpScroll from "@/Components/Common/UpScroll";
+import { Analytics } from "@vercel/analytics/next";
 
 const robotoFont = Roboto({
   variable: "--font-roboto",
@@ -43,6 +44,7 @@ export default function RootLayout({
           <UpScroll />
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
