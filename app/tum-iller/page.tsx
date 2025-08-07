@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <BreadCrumb title="Sağlık Kurumları Listesi" />
+      <BreadCrumb item={{ title: "Tüm İller", arr: [] }} />
       <CityListSection isTop={false} className="pt-16" />
     </>
   );

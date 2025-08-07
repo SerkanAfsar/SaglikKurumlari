@@ -285,8 +285,20 @@ footer {
 }
 
 .breadCrumb {
-  @apply relative z-10 flex h-[200px] w-full items-center justify-center bg-[url(/images/bg-breadcrumb.jpg)] bg-cover bg-center py-20 before:absolute before:inset-0 before:-z-10 before:h-full before:w-full before:bg-black/30 before:content-[''] lg:h-[250px];
+  @apply font-quicksand relative z-10 flex h-[200px] w-full flex-col items-center justify-center gap-6 bg-[url(/images/bg-breadcrumb.jpg)] bg-cover bg-center py-20 before:absolute before:inset-0 before:-z-10 before:h-full before:w-full before:bg-black/30 before:content-[''] lg:h-[250px];
   h1 {
-    @apply font-quicksand block text-center text-2xl font-bold text-white lg:text-4xl;
+    @apply block text-center text-2xl font-bold text-white lg:text-4xl;
+  }
+  ul {
+    @apply flex items-center justify-center text-xl font-semibold;
+    li {
+      @apply mr-[2px] last:[&_svg]:hidden;
+      a {
+        @apply flex items-center justify-center gap-[2px] text-[18px];
+        svg {
+          @apply mt-[3px];
+        }
+      }
+    }
   }
 }
