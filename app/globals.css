@@ -290,13 +290,13 @@ footer {
     @apply block text-center text-2xl font-bold text-white lg:text-4xl;
   }
   ul {
-    @apply flex items-center justify-center text-xl font-semibold;
+    @apply flex flex-wrap items-center justify-center text-sm font-semibold md:text-base lg:text-lg;
     li {
-      @apply mr-[2px] last:[&_svg]:hidden;
+      @apply last:[&_svg]:hidden;
       a {
-        @apply flex items-center justify-center gap-[2px] text-[18px];
+        @apply flex items-center justify-center;
         svg {
-          @apply mt-[3px];
+          @apply size-4;
         }
       }
     }

@@ -20,31 +20,33 @@ export default function BreadCrumb({ item }: { item: BreadCrumbType }) {
   return (
     <section className="breadCrumb">
       <h1>{item.title}</h1>
-      <ul className="flex items-center justify-center text-white">
-        <li>
-          <Link href={"/"} title="Anasayfa">
-            Anasayfa
-            <ChevronRight size={18} />
-          </Link>
-        </li>
-        <li>
-          <Link href={"/tum-iller"} title="Tüm İller">
-            Tüm İller
-            <ChevronRight size={18} />
-          </Link>
-        </li>
-        {item.arr.map((elem, index) => (
-          <li key={index}>
-            <Link
-              title={`${item.arr[index].title} Sağlık Kurumları`}
-              href={urlGenerator(index)}
-            >
-              {elem.title}
+      <nav>
+        <ul className="flex items-center justify-center text-white">
+          <li>
+            <Link href={"/"} title="Anasayfa">
+              Anasayfa
               <ChevronRight size={18} />
             </Link>
           </li>
-        ))}
-      </ul>
+          <li>
+            <Link href={"/tum-iller"} title="Tüm İller">
+              Tüm İller
+              <ChevronRight size={18} />
+            </Link>
+          </li>
+          {item.arr.map((elem, index) => (
+            <li key={index}>
+              <Link
+                title={`${item.arr[index].title} Sağlık Kurumları`}
+                href={urlGenerator(index)}
+              >
+                {elem.title}
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </section>
   );
 }

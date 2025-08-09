@@ -23,7 +23,7 @@ export default function Aside({
   return (
     <aside className="font-quicksand flex-auto lg:flex-1/4">
       <ul className="flex w-full flex-col gap-3 md:grid md:grid-cols-2 lg:flex">
-        <li className="block">
+        <li className="block md:col-span-2">
           <input
             type="text"
             value={value}
