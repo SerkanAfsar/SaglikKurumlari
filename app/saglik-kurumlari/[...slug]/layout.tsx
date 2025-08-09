@@ -19,7 +19,7 @@ export default async function Layout({ children, params }: LayoutProps) {
 
   const cityName = result.cityName;
   const districtName =
-    slug[1] && slug[1].indexOf("turunde") == -1 && result.listData[0].dc_ILCE;
+    slug[1] && slug[1].indexOf("turunde") == -1 && result.listData[0]?.dc_ILCE;
   const type =
     slug[2] &&
     result.listData.find((a) => slugUrl(a.dc_KURUM_TURU) == slug[2])
