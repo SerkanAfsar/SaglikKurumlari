@@ -19,13 +19,18 @@ export async function generateMetadata({
 
   const cityList = allDataResult.filter((a) => slugUrl(a.dc_SEHIR) == slug[0]);
   const districtList = cityList.filter((a) => slugUrl(a.dc_ILCE) == slug[1]);
-  const type = cityList.filter((a) => slugUrl(a.dc_KURUM_TURU) == slug[2]);
+  const type = cityList.find((a) => {
+    return (
+      slugUrl(a.dc_KURUM_TURU) == slug[slug.length - 1]?.replace("-turunde", "")
+    );
+  });
 
   const cityName = cityList[0]?.dc_SEHIR;
   const districtName = districtList[0]?.dc_ILCE;
-  const typeName = type[0]?.dc_KURUM_TURU;
+  const typeName = type?.dc_KURUM_TURU;
 
   let stringVal = "";
+
   if (cityName) {
     stringVal += cityName;
   }

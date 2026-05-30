@@ -12,6 +12,7 @@ export default function CustomSliderItem({
       <Image
         src={item.img}
         alt={item.title}
+        priority
         className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
       />
       <div className="flexCenter inset-0 container h-full w-full flex-col items-center gap-6 text-left md:!items-start">
