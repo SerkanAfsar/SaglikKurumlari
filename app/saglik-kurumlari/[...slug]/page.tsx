@@ -43,7 +43,7 @@ export async function generateMetadata({
 
   const value = `${stringVal} | Sağlık Kurumları Telefon Numaraları ve Adresleri`;
 
-  let url = `${envVariables.NEXT_PUBLIC_SITE_NAME}`;
+  let url = `${envVariables.NEXT_PUBLIC_SITE_NAME}/saglik-kurumlari`;
   if (slug[0]) {
     url += `/${slug[0]}`;
   }
