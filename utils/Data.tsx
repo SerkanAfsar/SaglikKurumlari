@@ -121,8 +121,8 @@ export const FooterQuickMenuListData: { title: string; href: string }[] = [
     href: "/saglik-kurumlari/bilecik",
   },
   {
-    title: "Muğla Sağlık Merkezleri",
-    href: "/saglik-kurumlari/mugla",
+    title: "Manisa Sağlık Merkezleri",
+    href: "/saglik-kurumlari/manisa",
   },
   {
     title: "Malatya Sağlık Merkezleri",

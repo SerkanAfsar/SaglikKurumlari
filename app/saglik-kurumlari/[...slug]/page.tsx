@@ -54,9 +54,11 @@ export async function generateMetadata({
     url += `/${slug[2]}`;
   }
 
+  const description = `${value} - Devlet Hastaneleri - Sağlık Ocakları - Aile Sağlığı Merkezleri - Hastaneler `;
+
   return {
     title: value,
-    description: value,
+    description: description,
     robots: "index,follow",
     publisher: "Sağlık Kurumları",
     authors: [
@@ -68,7 +70,7 @@ export async function generateMetadata({
 
     openGraph: {
       title: value,
-      description: value,
+      description: description,
       url,
       locale: "tr_TR",
       siteName: "Sağlık Kurumları",
@@ -78,7 +80,7 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary",
-      description: value,
+      description: description,
       title: value,
       creator: "@saglikkurumlari",
     },
