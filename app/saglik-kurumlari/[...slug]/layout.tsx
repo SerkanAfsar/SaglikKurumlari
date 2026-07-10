@@ -46,26 +46,29 @@ export default async function Layout({ children, params }: LayoutProps) {
     });
   }
 
+  const saglik =
+    type === "Aile Sağlığı Merkezleri" ? "Sağlık Ocakları" : undefined;
+
+  let sentence = cityName;
+  if (districtName) {
+    sentence += ` ${districtName}`;
+  }
+  if (type) {
+    sentence += ` ${type}`;
+  }
+
+  if (saglik) {
+    sentence += ` ${saglik}`;
+  }
+
   return (
     <>
       <BreadCrumb item={{ title: customTitle, arr }} />
       <div className="hidden">
-        <h2>
-          {cityName} {districtName && districtName} {type && type} Sağlık
-          Kurumları
-        </h2>
-        <h3>
-          {cityName} {districtName && districtName} {type && type} Sağlık
-          Telefon Numarası
-        </h3>
-        <h4>
-          {cityName} {districtName && districtName} {type && type} Adresleri
-          Numarası
-        </h4>
-        <h5>
-          {cityName} {districtName && districtName} {type && type} EPosta
-          Adresleri
-        </h5>
+        <h2>{`${sentence} Sağlık Kurumları`}</h2>
+        <h3>{`${sentence} Sağlık Kurumları Telefon Numaraları`}</h3>
+        <h4>{`${sentence} Sağlık Kurumları Adresleri`}</h4>
+        <h5>{`${sentence} Sağlık Kurumları E-Posta Adresleri`}</h5>
       </div>
       <div className="container flex flex-col gap-6 py-6 lg:flex-row">
         <Aside cityName={result.cityName} districtList={result.districtList} />
