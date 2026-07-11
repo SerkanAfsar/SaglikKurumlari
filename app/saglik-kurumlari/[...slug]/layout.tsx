@@ -47,7 +47,9 @@ export default async function Layout({ children, params }: LayoutProps) {
   }
 
   const saglik =
-    type === "Aile Sağlığı Merkezleri" ? "Sağlık Ocakları" : undefined;
+    type === "Aile Sağlığı Merkezleri"
+      ? "Sağlık Ocakları -  En Yakın Sağlık Ocağı"
+      : undefined;
 
   let sentence = cityName;
   if (districtName) {
