@@ -41,6 +41,15 @@ export async function generateMetadata({
     stringVal += " " + typeName;
   }
 
+  const saglikOcak =
+    typeName === "Aile Sağlığı Merkezleri"
+      ? " En Yakın Sağlık Ocağı"
+      : undefined;
+
+  if (saglikOcak) {
+    stringVal += " " + "|" + " " + saglikOcak;
+  }
+
   const value = `${stringVal} | Sağlık Kurumları Telefon Numaraları ve Adresleri`;
 
   let url = `${envVariables.NEXT_PUBLIC_SITE_NAME}/saglik-kurumlari`;
